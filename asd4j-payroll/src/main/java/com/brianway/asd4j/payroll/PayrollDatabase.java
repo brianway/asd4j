@@ -19,6 +19,10 @@ public class PayrollDatabase {
         itsEmployees.put(employeeId, employee);
     }
 
+    public void deleteEmployee(int employeeId) {
+        itsEmployees.remove(employeeId);
+    }
+
     public void clear() {
         itsEmployees.clear();
     }
