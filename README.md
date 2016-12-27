@@ -4,7 +4,7 @@ asd4j 是 《敏捷软件开发》一书的 Java 版实现
 
 **如果觉得不错，请先在这个仓库上点个 star 吧**，这也是对我的肯定和鼓励，谢谢了。
 
-目前只提供了知乎用户数据的爬虫示例。不定时进行调整和补充，需要关注更新的请 watch、star、fork
+不定时进行调整和补充，需要关注更新的请 watch、star、fork
 
 asd4j 的 github 地址：[https://github.com/brianway/asd4j](https://github.com/brianway/asd4j)
 
@@ -15,7 +15,7 @@ asd4j 的 github 地址：[https://github.com/brianway/asd4j](https://github.com
 
 
 ## 环境要求
-
+``
 - JDK 1.8+
 - Maven 3.3+
 

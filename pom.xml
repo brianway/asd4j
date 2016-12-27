@@ -18,6 +18,10 @@
         <junit.version>4.11</junit.version>
     </properties>
 
+    <modules>
+        <module>asd4j-payroll</module>
+    </modules>
+
     <description>
         Agile Software Development For Java
     </description>
@@ -44,6 +48,7 @@
             <url>http://www.apache.org/licenses/LICENSE-2.0</url>
         </license>
     </licenses>
+
     <dependencyManagement>
         <dependencies>
             <dependency>
