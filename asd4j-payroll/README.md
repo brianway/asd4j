@@ -23,3 +23,5 @@
 P178 核心模型类图
 
 找出潜在的抽象
+
+P184 AddEmployeeTransaction 静态模型 
