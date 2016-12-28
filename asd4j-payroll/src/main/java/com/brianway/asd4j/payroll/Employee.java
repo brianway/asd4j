@@ -10,6 +10,7 @@ public class Employee {
     private PaymentClassification classification;
     private PaymentSchedule schedule;
     private PaymentMethod method;
+    private Affiliation affiliation;
 
     public Employee(int id, String name, String address) {
         this.id = id;
@@ -39,6 +40,14 @@ public class Employee {
 
     public PaymentMethod getMethod() {
         return method;
+    }
+
+    public Affiliation getAffiliation() {
+        return affiliation;
+    }
+
+    public void setAffiliation(Affiliation affiliation) {
+        this.affiliation = affiliation;
     }
 
     public void setMethod(PaymentMethod method) {
