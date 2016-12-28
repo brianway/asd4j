@@ -6,6 +6,7 @@ package com.brianway.asd4j.payroll;
 public class CommissionedClassification extends PaymentClassification {
     private double salary;
     private double commissionRate;
+    private SalesReceipt salesReceipt;
 
     public CommissionedClassification(double salary, double commissionRate) {
         this.salary = salary;
@@ -26,5 +27,13 @@ public class CommissionedClassification extends PaymentClassification {
 
     public void setCommissionRate(double commissionRate) {
         this.commissionRate = commissionRate;
+    }
+
+    public void addSalesReceipt(SalesReceipt salesReceipt){
+        this.salesReceipt = salesReceipt;
+    }
+
+    public SalesReceipt getSalesReceipt() {
+        return salesReceipt;
     }
 }
