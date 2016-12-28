@@ -15,7 +15,6 @@ public class AddServiceChargeTest {
         String name = "Bill";
         String address = "Home";
         double hourlyRate = 15.25;
-        double hours = 8.0;
         AddHourlyEmployee t = new AddHourlyEmployee(employeeId, name, address, hourlyRate);
         t.execute();
 

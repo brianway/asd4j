@@ -10,10 +10,11 @@ public class DeleteEmployeeTest {
     @Test
     public void testDeleteEmployee() {
         int employeeId = 3;
-        String name = "Bob";
+        String name = "Lance";
         String address = "Home";
-        double salary = 1000.00;
-        AddSalariedEmployee t = new AddSalariedEmployee(employeeId, name, address, salary);
+        double salary = 2500;
+        double commissionRate = 3.2;
+        AddCommissionedEmployee t = new AddCommissionedEmployee(employeeId, name, address, salary, commissionRate);
         t.execute();
         {
             Employee e = PayrollDatabase.getPayrollDatabase().getEmployee(employeeId);
