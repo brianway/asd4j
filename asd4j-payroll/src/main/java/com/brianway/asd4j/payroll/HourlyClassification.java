@@ -23,11 +23,11 @@ public class HourlyClassification extends PaymentClassification {
         return timeCard;
     }
 
-    public double getHourlyRate() {
+    public double getRate() {
         return hourlyRate;
     }
 
-    public void setHourlyRate(double hourlyRate) {
+    public void setRate(double hourlyRate) {
         this.hourlyRate = hourlyRate;
     }
 }
