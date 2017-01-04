@@ -28,4 +28,8 @@ public class UnionAffiliation implements Affiliation {
         }
         return null;
     }
+
+    public double getDues() {
+        return dues;
+    }
 }
