@@ -29,6 +29,10 @@ public class UnionAffiliation implements Affiliation {
         return null;
     }
 
+    public int getMemberId() {
+        return memberId;
+    }
+
     public double getDues() {
         return dues;
     }

@@ -36,6 +36,10 @@ public class PayrollDatabase {
         relations.put(memberId, e);
     }
 
+    public void removeUnionMember(int memberId) {
+        relations.remove(memberId);
+    }
+
     public static PayrollDatabase getPayrollDatabase() {
         return database;
     }
