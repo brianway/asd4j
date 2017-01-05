@@ -16,7 +16,6 @@ public class SalariedClassification extends PaymentClassification {
 
     @Override
     public double calculatePay(Paycheck pc) {
-        //TODO calculatePay
-        return 0;
+        return salary;
     }
 }
