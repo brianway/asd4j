@@ -16,6 +16,12 @@ public class UnionAffiliation implements Affiliation {
         this.dues = dues;
     }
 
+    @Override
+    public double calculateDeductions(Paycheck pc) {
+        //TODO calculateDeductions
+        return 0;
+    }
+
     public void addServiceCharge(ServiceCharge sc) {
         serviceCharges.add(sc);
     }

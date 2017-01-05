@@ -28,3 +28,4 @@ P184 AddEmployeeTransaction 静态模型
 P192 TimeCardTransaction 模型
 P193 SalesReceiptTransaction 模型
 P194 ServiceChargeTransaction 模型
+P208 支付的动态情景模型

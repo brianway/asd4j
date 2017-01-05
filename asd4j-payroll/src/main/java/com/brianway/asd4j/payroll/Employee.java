@@ -1,5 +1,7 @@
 package com.brianway.asd4j.payroll;
 
+import java.util.Date;
+
 /**
  * Created by brian on 16/12/27.
  */
@@ -16,6 +18,21 @@ public class Employee {
         this.id = id;
         this.name = name;
         this.address = address;
+    }
+
+    public boolean isPayday(Date payDate) {
+        return schedule.isPayday(payDate);
+    }
+
+    public void payDay(Paycheck pc) {
+        double grossPay = classification.calculatePay(pc);
+        double deductions = affiliation.calculateDeductions(pc);
+        double netPay = grossPay - deductions;
+
+        pc.setGrossPay(grossPay);
+        pc.setDeductions(deductions);
+        pc.setNetPay(netPay);
+        method.pay(pc);
     }
 
     public int getId() {

@@ -1,7 +1,11 @@
 package com.brianway.asd4j.payroll;
 
+import java.util.Date;
+
 /**
  * Created by brian on 16/12/27.
  */
-public class PaymentSchedule {
+public interface PaymentSchedule {
+    boolean isPayday(Date payDate);
+    Date getPayPeriodStartDate(Date payDate);
 }

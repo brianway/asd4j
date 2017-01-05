@@ -13,4 +13,10 @@ public class SalariedClassification extends PaymentClassification {
     public double getSalary() {
         return salary;
     }
+
+    @Override
+    public double calculatePay(Paycheck pc) {
+        //TODO calculatePay
+        return 0;
+    }
 }

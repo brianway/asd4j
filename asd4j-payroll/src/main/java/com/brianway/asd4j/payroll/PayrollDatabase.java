@@ -1,6 +1,8 @@
 package com.brianway.asd4j.payroll;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -26,6 +28,12 @@ public class PayrollDatabase {
 
     public void clear() {
         itsEmployees.clear();
+    }
+
+    public List<Integer> getEmployeeIds() {
+        List<Integer> ids = new ArrayList<>();
+        ids.addAll(itsEmployees.keySet());
+        return ids;
     }
 
     public Employee getUnionMember(int memberId) {

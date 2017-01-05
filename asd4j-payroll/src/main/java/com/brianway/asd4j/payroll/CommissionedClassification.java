@@ -13,6 +13,12 @@ public class CommissionedClassification extends PaymentClassification {
         this.commissionRate = commissionRate;
     }
 
+    @Override
+    public double calculatePay(Paycheck pc) {
+        //TODO calculatePay
+        return 0;
+    }
+
     public double getSalary() {
         return salary;
     }
