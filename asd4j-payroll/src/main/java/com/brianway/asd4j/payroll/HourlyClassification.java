@@ -1,26 +1,26 @@
 package com.brianway.asd4j.payroll;
 
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by brian on 16/12/27.
  */
 public class HourlyClassification extends PaymentClassification {
     private double hourlyRate;
-    private TimeCard timeCard;
+    private final Map<Date, TimeCard> timeCards = new HashMap<Date, TimeCard>();
 
     public HourlyClassification(double hourlyRate) {
         this.hourlyRate = hourlyRate;
     }
 
     public void addTimeCard(TimeCard timeCard) {
-        //TODO add
-        this.timeCard = timeCard;
+        timeCards.put(timeCard.getDate(), timeCard);
     }
 
     public TimeCard getTimeCard(Date date) {
-        //TODO get
-        return timeCard;
+        return timeCards.get(date);
     }
 
     public double getRate() {
@@ -33,7 +33,20 @@ public class HourlyClassification extends PaymentClassification {
 
     @Override
     public double calculatePay(Paycheck pc) {
-        //TODO calculatePay
-        return 0;
+        double totalPay = 0.0;
+        for (TimeCard tc : timeCards.values()) {
+            if (isInPayPeriod(tc.getDate(), pc)) {
+                totalPay += calculatePayForTimeCard(tc);
+            }
+        }
+        return totalPay;
     }
+
+    private double calculatePayForTimeCard(TimeCard tc) {
+        double hours = tc.getHours();
+        double overtime = hours > 8 ? hours - 8 : 0;
+        double baseTime = hours - overtime;
+        return baseTime * hourlyRate + overtime * hourlyRate * 1.5;
+    }
+
 }

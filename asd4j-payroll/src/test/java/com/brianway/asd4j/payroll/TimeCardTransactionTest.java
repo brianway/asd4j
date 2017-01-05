@@ -20,7 +20,8 @@ public class TimeCardTransactionTest {
         t.execute();
 
         //TODO Deprecated Date constructor
-        TimeCardTransaction tct = new TimeCardTransaction(new Date(2016, 12, 27).getTime(), hours, employeeId);
+        Date date = new Date(2016 - 1900, 11, 27);
+        TimeCardTransaction tct = new TimeCardTransaction(date, hours, employeeId);
         tct.execute();
 
         Employee e = PayrollDatabase.getPayrollDatabase().getEmployee(employeeId);
@@ -29,7 +30,7 @@ public class TimeCardTransactionTest {
         PaymentClassification pc = e.getClassification();
         Assert.assertTrue(pc instanceof HourlyClassification);
 
-        TimeCard tc = ((HourlyClassification) pc).getTimeCard(new Date(2016, 12, 27));
+        TimeCard tc = ((HourlyClassification) pc).getTimeCard(date);
         Assert.assertNotNull(tc);
         Assert.assertEquals(hours, tc.getHours(), 0.0);
     }

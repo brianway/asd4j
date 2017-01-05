@@ -9,7 +9,6 @@ public abstract class PaymentClassification {
     public abstract double calculatePay(Paycheck pc);
 
     protected boolean isInPayPeriod(Date date, Paycheck pc) {
-        //TODO
-        return false;
+        return DateHelper.isBetween(date, pc.getPayPeriodStartDate(), pc.getPayPeriodEndDate());
     }
 }

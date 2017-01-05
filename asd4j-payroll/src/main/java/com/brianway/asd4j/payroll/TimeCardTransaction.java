@@ -10,9 +10,9 @@ public class TimeCardTransaction implements Transaction {
     private Date date;
     private double hours;
 
-    public TimeCardTransaction(long date, double hours, int employeeId) {
+    public TimeCardTransaction(Date date, double hours, int employeeId) {
         this.hours = hours;
-        this.date = new Date(date);
+        this.date = date;
         this.employeeId = employeeId;
     }
 
