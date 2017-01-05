@@ -1,12 +1,16 @@
 package com.brianway.asd4j.payroll;
 
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Created by brian on 16/12/27.
  */
 public class CommissionedClassification extends PaymentClassification {
     private double salary;
     private double commissionRate;
-    private SalesReceipt salesReceipt;
+    private final Map<Date, SalesReceipt> salesReceipts = new HashMap<>();
 
     public CommissionedClassification(double salary, double commissionRate) {
         this.salary = salary;
@@ -15,8 +19,21 @@ public class CommissionedClassification extends PaymentClassification {
 
     @Override
     public double calculatePay(Paycheck pc) {
-        //TODO calculatePay
-        return 0;
+        //TODO base pay
+        double sales = calculateSales(pc);
+        double commissionPay = commissionRate * 0.01 * sales;
+        return salary + commissionPay;
+    }
+
+    private double calculateSales(Paycheck pc) {
+        //TODO Java 8
+        double sales = 0.0;
+        for (SalesReceipt sr : salesReceipts.values()) {
+            if (isInPayPeriod(sr.getDate(), pc)) {
+                sales += sr.getAmount();
+            }
+        }
+        return sales;
     }
 
     public double getSalary() {
@@ -35,11 +52,11 @@ public class CommissionedClassification extends PaymentClassification {
         this.commissionRate = commissionRate;
     }
 
-    public void addSalesReceipt(SalesReceipt salesReceipt){
-        this.salesReceipt = salesReceipt;
+    public void addSalesReceipt(SalesReceipt salesReceipt) {
+        salesReceipts.put(salesReceipt.getDate(), salesReceipt);
     }
 
-    public SalesReceipt getSalesReceipt() {
-        return salesReceipt;
+    public SalesReceipt getSalesReceipt(Date date) {
+        return salesReceipts.get(date);
     }
 }

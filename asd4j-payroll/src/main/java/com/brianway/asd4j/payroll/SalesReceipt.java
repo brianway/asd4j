@@ -1,22 +1,24 @@
 package com.brianway.asd4j.payroll;
 
+import java.util.Date;
+
 /**
  * Created by brian on 16/12/28.
  */
 public class SalesReceipt {
-    private long date;
+    private Date date;
     private double amount;
 
-    public SalesReceipt(long date, double amount) {
+    public SalesReceipt(Date date, double amount) {
         this.date = date;
         this.amount = amount;
     }
 
-    public long getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(long date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 

@@ -29,3 +29,7 @@ P192 TimeCardTransaction 模型
 P193 SalesReceiptTransaction 模型
 P194 ServiceChargeTransaction 模型
 P208 支付的动态情景模型
+
+
+为什么用 Map存 SalesReceipt 和 TimeCard 等,而不是用List?
+暂时的考虑是:一个速度问题,一个是多次赋值同一Date可覆盖前值,List不行(直接)。

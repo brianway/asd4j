@@ -16,7 +16,7 @@ public class SalesReceiptTransactionTest {
         String address = "Home";
         double salary = 500.0;
         double commissionRate = 3.0;
-        long date = new Date(2016, 12, 27).getTime();//TODO Deprecated Date constructor
+        Date date = new Date(2016 - 1900, 11, 27);//TODO Deprecated Date constructor
         double amount = 100.0;
         AddCommissionedEmployee t = new AddCommissionedEmployee(employeeId, name, address, salary, commissionRate);
         t.execute();
@@ -30,7 +30,7 @@ public class SalesReceiptTransactionTest {
         PaymentClassification pc = e.getClassification();
         Assert.assertTrue(pc instanceof CommissionedClassification);
 
-        SalesReceipt sr = ((CommissionedClassification) pc).getSalesReceipt();
+        SalesReceipt sr = ((CommissionedClassification) pc).getSalesReceipt(date);
         Assert.assertNotNull(sr);
         Assert.assertEquals(amount, sr.getAmount(), 0.0);
     }
