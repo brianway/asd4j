@@ -1,5 +1,7 @@
 package com.brianway.asd4j.payroll;
 
+import static java.util.Calendar.FRIDAY;
+
 import java.util.Date;
 
 /**
@@ -8,11 +10,11 @@ import java.util.Date;
 public class WeeklySchedule implements PaymentSchedule {
     @Override
     public Date getPayPeriodStartDate(Date payDate) {
-        return null;
+        return DateHelper.subtractDays(payDate, 6);
     }
 
     @Override
     public boolean isPayday(Date payDate) {
-        return false;
+        return DateHelper.dayOfWeek(payDate) == FRIDAY;
     }
 }

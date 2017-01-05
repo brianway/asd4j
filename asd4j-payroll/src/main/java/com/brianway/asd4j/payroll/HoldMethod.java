@@ -6,6 +6,6 @@ package com.brianway.asd4j.payroll;
 public class HoldMethod implements PaymentMethod {
     @Override
     public void pay(Paycheck pc) {
-        //TODO pay
+        pc.setField("Disposition", "Hold");
     }
 }

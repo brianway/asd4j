@@ -18,6 +18,7 @@ public class Employee {
         this.id = id;
         this.name = name;
         this.address = address;
+        this.affiliation = new NoAffiliation();
     }
 
     public boolean isPayday(Date payDate) {
@@ -33,6 +34,10 @@ public class Employee {
         pc.setDeductions(deductions);
         pc.setNetPay(netPay);
         method.pay(pc);
+    }
+
+    public Date getPayPeriodStartDate(final Date date) {
+        return schedule.getPayPeriodStartDate(date);
     }
 
     public int getId() {

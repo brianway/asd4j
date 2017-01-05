@@ -10,16 +10,20 @@ import java.util.Map;
 public class Paycheck {
     private final Map<String, String> fields = new HashMap<String, String>();
     private final Date payPeriodStartDate;
-    //private final Date payPeriodEndDate;
+    private final Date payPeriodEndDate;//TODO
     private double grossPay;
     private double deductions;
     private double netPay;
 
-    public Paycheck(Date payPeriodStartDate) {
+    public Paycheck(Date payPeriodStartDate, Date payPeriodEndDate) {
         this.payPeriodStartDate = payPeriodStartDate;
-
+        this.payPeriodEndDate = payPeriodEndDate;
     }
 
+    public Date getPayPeriodEndDate() {
+
+        return payPeriodEndDate;
+    }
 
     public Date getPayPeriodStartDate() {
         return payPeriodStartDate;
@@ -47,5 +51,13 @@ public class Paycheck {
 
     public void setNetPay(double netPay) {
         this.netPay = netPay;
+    }
+
+    public String getField(String name) {
+        return fields.get(name);
+    }
+
+    public void setField(String name, String value) {
+        fields.put(name, value);
     }
 }

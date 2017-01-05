@@ -22,10 +22,14 @@ public class PaydayTransaction implements Transaction {
         for (int employeeId : employeeIds) {
             Employee e = PayrollDatabase.getPayrollDatabase().getEmployee(employeeId);
             if (e.isPayday(payDate)) {
-                Paycheck pc = new Paycheck(payDate);
+                Paycheck pc = new Paycheck(e.getPayPeriodStartDate(payDate), payDate);
                 paychecks.put(employeeId, pc);
                 e.payDay(pc);
             }
         }
+    }
+
+    public Paycheck getPaycheck(int employeeId) {
+        return paychecks.get(employeeId);
     }
 }
