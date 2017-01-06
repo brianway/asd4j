@@ -1,5 +1,7 @@
 package com.brianway.asd4j.payroll;
 
+import com.brianway.asd4j.payroll.domain.Paycheck;
+import com.brianway.asd4j.payroll.transaction.impl.PaydayTransaction;
 import org.junit.Assert;
 
 import java.util.Date;

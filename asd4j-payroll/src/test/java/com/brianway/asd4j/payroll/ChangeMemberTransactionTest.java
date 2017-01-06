@@ -1,5 +1,11 @@
 package com.brianway.asd4j.payroll;
 
+import com.brianway.asd4j.payroll.db.PayrollDatabase;
+import com.brianway.asd4j.payroll.domain.Affiliation;
+import com.brianway.asd4j.payroll.domain.Employee;
+import com.brianway.asd4j.payroll.impl.UnionAffiliation;
+import com.brianway.asd4j.payroll.transaction.impl.AddHourlyEmployee;
+import com.brianway.asd4j.payroll.transaction.ChangeMemberTransaction;
 import org.junit.Assert;
 import org.junit.Test;
 

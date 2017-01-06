@@ -1,6 +1,8 @@
 package com.brianway.asd4j.payroll;
 
 import static com.brianway.asd4j.payroll.PayRollTestHelper.validatePaycheck;
+import com.brianway.asd4j.payroll.transaction.impl.AddSalariedEmployee;
+import com.brianway.asd4j.payroll.transaction.impl.PaydayTransaction;
 import org.junit.Assert;
 import org.junit.Test;
 

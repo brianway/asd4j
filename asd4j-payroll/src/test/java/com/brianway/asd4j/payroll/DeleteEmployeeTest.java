@@ -1,5 +1,9 @@
 package com.brianway.asd4j.payroll;
 
+import com.brianway.asd4j.payroll.db.PayrollDatabase;
+import com.brianway.asd4j.payroll.domain.Employee;
+import com.brianway.asd4j.payroll.transaction.impl.AddCommissionedEmployee;
+import com.brianway.asd4j.payroll.transaction.impl.DeleteEmployeeTransaction;
 import org.junit.Assert;
 import org.junit.Test;
 

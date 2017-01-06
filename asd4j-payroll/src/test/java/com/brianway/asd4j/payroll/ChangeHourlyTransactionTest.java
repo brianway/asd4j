@@ -1,5 +1,13 @@
 package com.brianway.asd4j.payroll;
 
+import com.brianway.asd4j.payroll.db.PayrollDatabase;
+import com.brianway.asd4j.payroll.domain.Employee;
+import com.brianway.asd4j.payroll.domain.PaymentClassification;
+import com.brianway.asd4j.payroll.domain.PaymentSchedule;
+import com.brianway.asd4j.payroll.impl.HourlyClassification;
+import com.brianway.asd4j.payroll.impl.WeeklySchedule;
+import com.brianway.asd4j.payroll.transaction.impl.AddCommissionedEmployee;
+import com.brianway.asd4j.payroll.transaction.impl.ChangeHourlyTransaction;
 import org.junit.Assert;
 import org.junit.Test;
 
