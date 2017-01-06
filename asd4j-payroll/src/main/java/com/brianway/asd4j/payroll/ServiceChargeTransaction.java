@@ -1,14 +1,16 @@
 package com.brianway.asd4j.payroll;
 
+import java.util.Date;
+
 /**
  * Created by brian on 16/12/28.
  */
 public class ServiceChargeTransaction implements Transaction {
-    private long date;
+    private Date date;
     private double amount;
     private int memberId;
 
-    public ServiceChargeTransaction(int memberId, long date, double amount) {
+    public ServiceChargeTransaction(int memberId, Date date, double amount) {
         this.date = date;
         this.amount = amount;
         this.memberId = memberId;

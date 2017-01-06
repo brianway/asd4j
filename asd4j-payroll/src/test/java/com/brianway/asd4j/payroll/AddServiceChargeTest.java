@@ -26,7 +26,7 @@ public class AddServiceChargeTest {
         UnionAffiliation af = new UnionAffiliation(memberId, due);
         e.setAffiliation(af);
 
-        long date = new Date(2016, 12, 27).getTime();//TODO date
+        Date date = new Date(2016-1900, 11, 27);//TODO
         double amount = 12.95;
         PayrollDatabase.getPayrollDatabase().addUnionMember(memberId, e);
         ServiceChargeTransaction sct = new ServiceChargeTransaction(memberId, date, amount);

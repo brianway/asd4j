@@ -8,7 +8,7 @@ import java.util.Date;
 public abstract class PaymentClassification {
     public abstract double calculatePay(Paycheck pc);
 
-    protected boolean isInPayPeriod(Date date, Paycheck pc) {
+    protected boolean isInPayPeriod(Date date, final Paycheck pc) {
         return DateHelper.isBetween(date, pc.getPayPeriodStartDate(), pc.getPayPeriodEndDate());
     }
 }
